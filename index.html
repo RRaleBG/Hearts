@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TNYZLHN2H">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-5TNYZLHN2H');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    </script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZV8M3JB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TNYZLHN2H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5TNYZLHN2H');
+    </script>
+
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })
+            (
+                window, document, 'script', 'dataLayer', 'GTM-KZV8M3JB'
+            );
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="heart.png">
+    <title>Srca</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            height: 100vh auto;
+            width: 100vw auto;
+            background: #221c3f;
+        }
+
+        span {
+            position: absolute;
+            background: url(heart.png);
+            background-size: cover;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            animation: animate 3s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                transform: translate (-50%, -1000%);
+                opacity: 0;
+                filter: hue-rotate(720deg);
+            }
+        }
+    </style>
+
+</head>
+
+<body id="swipe">
+    <script defer type="text/javascript">
+
+        /**
+         * @description Handles the touch event and appends a heart to the page 
+         * @param {Object} args - The event object
+         * @param {string} args.type - The type of event
+         * @param {number} args.x - The x-coordinate of the touch event
+         * @param {number} args.y - The y-coordinate of the touch event
+         */
+
+
+
+
+        function touching(args) {
+            if (args.type === "swipe") {
+                var body = document.querySelector('body');
+                var heart = document.createElement("span");
+                var x = e.offsetX;
+                var y = e.offsetY;
+                heart.style.left = `${swipe.x}px`;
+                heart.style.top = `${swipe.y}px`;
+                var size = Math.random() * 50;
+                heart.style.width = 20 + size + 'px';
+                heart.style.height = 20 + size + 'px';
+
+                body.appendChild(heart);
+
+                setTimeout(function () {
+                    heart.remove();
+                }, 2000)
+            }
+        }
+
+
+        document.addEventListener("touchmove", e => {
+            e.preventDefault();
+
+            e = e.touches[0];
+
+
+
+            ;[...e.changedTouches].forEach(touch => {
+                var body = document.querySelector('body');
+                var heart = document.createElement("span");
+                var x = e.offsetX;
+                var y = e.offsetY;
+                heart.style.left = `${touch.x}px`;
+                heart.style.top = `${touch.y}px`;
+                var size = Math.random() * 50;
+                heart.style.width = 20 + size + 'px';
+                heart.style.height = 20 + size + 'px';
+
+                body.appendChild(heart);
+
+                setTimeout(function () {
+                    heart.remove();
+                }, 2000)
+            })
+        });
+
+        document.addEventListener("mousemove", function (e) {
+            var body = document.querySelector('body');
+            var heart = document.createElement("span");
+            var x = e.offsetX;
+            var y = e.offsetY;
+            heart.style.left = x + 'px';
+            heart.style.top = y + 'px';
+            var size = Math.random() * 100;
+            heart.style.width = 20 + size + 'px';
+            heart.style.height = 20 + size + 'px';
+            body.appendChild(heart);
+
+            setTimeout(function () {
+                heart.remove();
+            }, 2000)
+        });
+    </script>
+</body>
+
+</html>
